@@ -24,15 +24,15 @@ class EngineeringTeam():
             verbose=True,
             allow_code_execution=True,
             code_execution_mode="safe",  # Uses Docker for safety
-            max_execution_time=500, 
-            max_retry_limit=3 
+            max_execution_time=500, #we are giving it a few mins to run and giving it 5 retries
+            max_retry_limit=5
         )
     
     @agent
     def frontend_engineer(self) -> Agent:
         return Agent(
             config=self.agents_config['frontend_engineer'],
-            verbose=True,
+            verbose=True, #I am not adding code execution here because that will bring up the gradio UI. So I will just have it create the gradio code.
         )
     
     @agent
@@ -40,10 +40,10 @@ class EngineeringTeam():
         return Agent(
             config=self.agents_config['test_engineer'],
             verbose=True,
-            allow_code_execution=True,
+            allow_code_execution=True, #I will add code execution execution here because I want to agent to write and run the unit tests
             code_execution_mode="safe",  # Uses Docker for safety
-            max_execution_time=500, 
-            max_retry_limit=3 
+            max_execution_time=500, #we are giving it a few mins to run and giving it 5 retries
+            max_retry_limit=5
         )
 
     @task
@@ -77,5 +77,5 @@ class EngineeringTeam():
             agents=self.agents,
             tasks=self.tasks,
             process=Process.sequential,
-            verbose=True,
+            verbose=True
         )
