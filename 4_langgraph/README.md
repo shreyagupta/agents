@@ -101,7 +101,7 @@ The result is a flexible, extensible agent capable of performing real tasks—no
 ![compute_pi_times_3_trace](../images/langchain_trace_for_sidekick_showing_evaluator_feedback.png)
 
 ## 2a) Asking agent to find the best thai restaurants in SF, persist a report in `dinner.md` and send me push notification with the name and number of the top restaurant.
-![top_thai_report](../images/langchain_sidekick_restaurant_summary.png)
+![top_thai_report](../images/langchain_sidekick_restaurant_update_summary.png)
 
 ## 2b) Asking agent to update the report in dinner.md with a summary of the reviews and menu items
 ![top_thai_report_updated](../images/langchain_sidekick_restaurant_summary_updated.png)
