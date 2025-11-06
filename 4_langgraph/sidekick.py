@@ -34,7 +34,7 @@ class EvaluatorOutput(BaseModel):
 
 
 class Sidekick:
-    def __init__(self):
+    def __init__(self): #in asyncio the init should not be an async co-routione but the graphs etc need to be set up asynchronously so they have their own async co-routines outside init and these co-routines are called asynchronously to setup the graphs
         self.worker_llm_with_tools = None
         self.evaluator_llm_with_output = None
         self.tools = None

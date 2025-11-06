@@ -1,24 +1,18 @@
-# Dinner Report: Le Bernardin
+# Nari Thai Restaurant
 
-## Restaurant Overview
-- **Name**: Le Bernardin
-- **Address**: 155 W 51st St, New York, NY 10019
-- **Phone**: (212) 554-1515
-- **Website**: [le-bernardin.com](http://le-bernardin.com)
+## Details
+- **Address:** 1625 Post St, San Francisco, CA 94115
+- **Phone Number:** (415) 362-3683
 
-## Cuisine
-Le Bernardin specializes in refined seafood dishes, crafted with the utmost respect for the ingredients. The menu includes a variety of seafood preparations, with an emphasis on freshness and simplicity.
+## Reviews
+- Nari is noted for its modern take on traditional Thai cuisine, with standout dishes such as squid and pork jowl that many patrons find extraordinary. The restaurant has been praised for its combination of spicy, sweet, and salty flavors that create memorable dishes.
+- The atmosphere is described as dark and sophisticated, situated within Hotel Kabuki, which contributes to an enjoyable dining experience. Many reviewers appreciate the refinement of the dishes while still enjoying the family-style dining concept.
+- Some reviews suggest that traditionalists may find some dishes less authentic compared to the typical Thai food, but it has received acclaim for its creativity and vibrant ambiance.
 
 ## Menu Highlights
-- **Tuna Tartare**: Diced raw tuna, served with toasted sesame and avocado.
-- **Wild Salmon**: Lightly cooked, served with a warm ginger-soy emulsion and bok choy.
-- **Poached Lobster**: Accompanied by truffle butter and a delicate sauce.
-- **Chocolate Soufflé**: A classic dessert, rich and airy.
-
-## Ambiance
-The atmosphere at Le Bernardin is elegant and serene, characterized by minimalist decor and a focus on the dining experience.
-
-## Summary of Reviews
-Le Bernardin has consistently received rave reviews for its exceptional cuisine and impeccable service. It is a three-Michelin star restaurant, recognized as one of the best seafood restaurants not only in New York but also in the world. Diners emphasize the harmonious flavors and the artistry of the dishes, making it a top choice for special occasions.
-
-**In conclusion**, Le Bernardin represents the pinnacle of fine dining, offering diners an unforgettable experience centered around seafood excellence.
+- **Gaeng Kua Mussels:** Simmered in curry spices and coconut milk.
+- **Crispy Fried Fish:** Spiced to perfection.
+- **Gaeng Bumbai Aubergine and Caviar Kaluga:** Unique dishes that showcase the restaurant's innovative approach.
+- **Pork Jowl and Lamb Creations:** Options for meat enthusiasts.
+- **Vegetarian Options:** Includes dishes like eggplant curry.
+- **Family-Style Dining:** Dishes are served to be shared, reflecting both comfort and sophistication.

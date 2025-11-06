@@ -49,7 +49,7 @@ async def other_tools():
     wikipedia = WikipediaAPIWrapper()
     wiki_tool = WikipediaQueryRun(api_wrapper=wikipedia)
 
-    python_repl = PythonREPLTool()
+    python_repl = PythonREPLTool() #gives our llm to run python code equivalent to doing `python xyz.py` in terminal. This is not insulated and run in docker, but directly in your machine so be careful with it.
     
     return file_tools + [push_tool, tool_search, python_repl,  wiki_tool]
 
