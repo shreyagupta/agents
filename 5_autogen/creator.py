@@ -55,11 +55,11 @@ class Creator(RoutedAgent):
         agent_name = filename.split(".")[0]
         text_message = TextMessage(content=self.get_user_prompt(), source="user")
         response = await self._delegate.on_messages([text_message], ctx.cancellation_token)
-        with open(filename, "w", encoding="utf-8") as f:
+        with open(filename, "w", encoding="utf-8") as f: #creates a new agent with name filename passed as message to this handler
             f.write(response.chat_message.content)
         print(f"** Creator has created python code for agent {agent_name} - about to register with Runtime")
         module = importlib.import_module(agent_name)
         await module.Agent.register(self.runtime, agent_name, lambda: module.Agent(agent_name))
         logger.info(f"** Agent {agent_name} is live")
-        result = await self.send_message(messages.Message(content="Give me an idea"), AgentId(agent_name, "default"))
+        result = await self.send_message(messages.Message(content="Give me an idea"), AgentId(agent_name, "default")) #this means the agent created will generate and idea, and if the probability criteria is met then it will send that idea to another agent for deedback before returning the refined idea
         return messages.Message(content=result.content)

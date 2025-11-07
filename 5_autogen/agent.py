@@ -33,7 +33,7 @@ class Agent(RoutedAgent):
 
     @message_handler
     async def handle_message(self, message: messages.Message, ctx: MessageContext) -> messages.Message:
-        print(f"{self.id.type}: Received message")
+        print(f"{self.id.type}: Received message") #so we will see ass agent recieve messages
         text_message = TextMessage(content=message.content, source="user")
         response = await self._delegate.on_messages([text_message], ctx.cancellation_token)
         idea = response.chat_message.content
@@ -42,4 +42,4 @@ class Agent(RoutedAgent):
             message = f"Here is my business idea. It may not be your speciality, but please refine it and make it better. {idea}"
             response = await self.send_message(messages.Message(content=message), recipient)
             idea = response.content
-        return messages.Message(content=idea)
+        return messages.Message(content=idea) #so it either returns its own idea, or it idea refined by another agent

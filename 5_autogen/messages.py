@@ -13,7 +13,7 @@ class Message:
 
 def find_recipient() -> AgentId:
     try:
-        agent_files = glob.glob("agent*.py")
+        agent_files = glob.glob("agent*.py") #as the agents start appearing their corresponding files agen1.py, agent2.py, etc will appear.
         agent_names = [os.path.splitext(file)[0] for file in agent_files]
         agent_names.remove("agent")
         agent_name = random.choice(agent_names)

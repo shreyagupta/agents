@@ -1,9 +1,9 @@
-from mcp.server.fastmcp import FastMCP
-from accounts import Account
+from mcp.server.fastmcp import FastMCP #import anthropic class called fastmcp
+from accounts import Account #impot business logic
 
-mcp = FastMCP("accounts_server")
+mcp = FastMCP("accounts_server") #this creates the mcp sever
 
-@mcp.tool()
+@mcp.tool() #decorated with this making it mcp tools, this server will be launched when we spawn our mcp and all these tools will be available
 async def get_balance(name: str) -> float:
     """Get the cash balance of the given account name.
 
@@ -56,7 +56,7 @@ async def change_strategy(name: str, strategy: str) -> str:
     """
     return Account.get(name).change_strategy(strategy)
 
-@mcp.resource("accounts://accounts_server/{name}")
+@mcp.resource("accounts://accounts_server/{name}") #this is a resource, uncommon usually
 async def read_account_resource(name: str) -> str:
     account = Account.get(name.lower())
     return account.report()
@@ -67,4 +67,4 @@ async def read_strategy_resource(name: str) -> str:
     return account.get_strategy()
 
 if __name__ == "__main__":
-    mcp.run(transport='stdio')
+    mcp.run(transport='stdio') #usual stdio transport function is being used since i am running on my box

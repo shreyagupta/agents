@@ -4,37 +4,41 @@ from mcp import StdioServerParameters
 from agents import FunctionTool
 import json
 
-params = StdioServerParameters(command="uv", args=["run", "accounts_server.py"], env=None)
+params = StdioServerParameters(command="uv", args=["run", "accounts_server.py"], env=None) #params used to launch the server
 
 
-async def list_accounts_tools():
+async def list_accounts_tools(): #1) you need a list of tools once server is contacted
     async with stdio_client(params) as streams:
         async with mcp.ClientSession(*streams) as session:
             await session.initialize()
             tools_result = await session.list_tools()
             return tools_result.tools
         
-async def call_accounts_tool(tool_name, tool_args):
+async def call_accounts_tool(tool_name, tool_args): #call tool
     async with stdio_client(params) as streams:
         async with mcp.ClientSession(*streams) as session:
             await session.initialize()
             result = await session.call_tool(tool_name, tool_args)
             return result
             
-async def read_accounts_resource(name):
+async def read_accounts_resource(name): #reading one of the resources
     async with stdio_client(params) as streams:
         async with mcp.ClientSession(*streams) as session:
             await session.initialize()
             result = await session.read_resource(f"accounts://accounts_server/{name}")
             return result.contents[0].text
         
-async def read_strategy_resource(name):
+async def read_strategy_resource(name): #reading the other resource
     async with stdio_client(params) as streams:
         async with mcp.ClientSession(*streams) as session:
             await session.initialize()
             result = await session.read_resource(f"accounts://strategy/{name}")
             return result.contents[0].text
 
+"""
+MCP returns tools in a type very similar (but slightly different) to the json description of the tool.
+All of this comes for free in openAISDK so its not actually needed.
+"""
 async def get_accounts_tools_openai():
     openai_tools = []
     for tool in await list_accounts_tools():

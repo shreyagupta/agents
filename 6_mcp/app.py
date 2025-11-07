@@ -17,6 +17,9 @@ mapper = {
 
 
 class Trader:
+    """
+    This class wraps various calls to, to organize the business rules around a trader for this screen.
+    """
     def __init__(self, name: str, lastname: str, model_name: str):
         self.name = name
         self.lastname = lastname
@@ -94,6 +97,10 @@ class Trader:
 
 
 class TraderView:
+    """
+    This is a companion class, trader view, which deals with the visual elements associated with any trader.
+    And it has something that periodically refreshes the screen. 
+    """
     def __init__(self, trader: Trader):
         self.trader = trader
         self.portfolio_value = None
@@ -165,7 +172,7 @@ class TraderView:
         )
 
 
-# Main UI construction
+# Main UI construction 
 def create_ui():
     """Create the main Gradio UI for the trading simulation"""
 
@@ -186,5 +193,6 @@ def create_ui():
 
 
 if __name__ == "__main__":
+    #Code to launch the UI
     ui = create_ui()
     ui.launch(inbrowser=True)
